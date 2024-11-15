@@ -1,28 +1,21 @@
-import { Generator } from "@canonical/generator-lib";
-import { QuestionChain } from "@canonical/generator-lib";
+import { Generator, Question } from "@canonical/generator-lib";
+import type { QuestionChain } from "@canonical/generator-lib";
 
-export class ComponentGenerator extends Generator {
-  constructor() {
-    super();
-  }
-
-  /**
-   * Questions specific to the component generator.
-   */
+export default class ComponentGenerator extends Generator {
   private getComponentQuestions(): QuestionChain {
     return {
-      componentName: {
+      componentName: new Question({
         text: "What is the name of the component?",
         strategy: "input",
-      },
-      includeTests: {
+      }),
+      includeTests: new Question({
         text: "Do you want to include test files?",
         strategy: "confirm",
-      },
-      useStorybook: {
+      }),
+      useStorybook: new Question({
         text: "Should Storybook files be generated?",
         strategy: "confirm",
-      },
+      }),
     };
   }
 
@@ -32,11 +25,9 @@ export class ComponentGenerator extends Generator {
   async run() {
     console.log("Starting Component Generator...");
 
-    // Ask component-specific questions
     await this.askQuestions(this.getComponentQuestions());
 
-    // Extract answers from context
-    const { componentName, includeTests, useStorybook } = this.getContext();
+    const { componentName, includeTests, useStorybook } = this.context;
 
     // Paths to templates
     const templateDir = "./templates/component";
@@ -45,21 +36,21 @@ export class ComponentGenerator extends Generator {
     // Render main component file
     await this.renderTemplate(
       `${templateDir}/Component.ejs`,
-      `${outputDir}/${componentName}.tsx`
+      `${outputDir}/${componentName}.tsx`,
     );
 
     // Optionally render additional files
     if (includeTests) {
       await this.renderTemplate(
         `${templateDir}/Component.test.ejs`,
-        `${outputDir}/${componentName}.test.tsx`
+        `${outputDir}/${componentName}.test.tsx`,
       );
     }
 
     if (useStorybook) {
       await this.renderTemplate(
         `${templateDir}/Component.stories.ejs`,
-        `${outputDir}/${componentName}.stories.tsx`
+        `${outputDir}/${componentName}.stories.tsx`,
       );
     }
 
@@ -67,7 +58,6 @@ export class ComponentGenerator extends Generator {
   }
 }
 
-// Usage Example
 async function runComponentGenerator() {
   const componentGenerator = new ComponentGenerator();
   await componentGenerator.run();

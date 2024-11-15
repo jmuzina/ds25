@@ -1,4 +1,4 @@
-import {QuestionChain, QuestionChainAnswers} from "./Question.js";
+import type { QuestionChain, QuestionChainAnswers } from "./Question.js";
 
 export default class Prompts {
   answers?: QuestionChainAnswers;

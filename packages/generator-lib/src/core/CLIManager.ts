@@ -1,6 +1,6 @@
 import yargs from "yargs";
-import GeneratorRegistry from "./GeneratorRegistry.js";
-import {hideBin} from "yargs/helpers";
+import { hideBin } from "yargs/helpers";
+import type GeneratorRegistry from "./GeneratorRegistry.js";
 
 export default class CLIManager {
   constructor(private registry: GeneratorRegistry) {}

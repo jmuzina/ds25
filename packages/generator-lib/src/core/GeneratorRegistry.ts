@@ -1,4 +1,4 @@
-import Generator from "./Generator.js";
+import type Generator from "./Generator.js";
 
 export default class GeneratorRegistry {
   private registry: Record<string, typeof Generator> = {};

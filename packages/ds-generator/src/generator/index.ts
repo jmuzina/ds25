@@ -1,5 +1,5 @@
 import { CLIManager, GeneratorRegistry } from "@canonical/generator-lib";
-import { ComponentGenerator } from "./generators/ComponentGenerator.js";
+import ComponentGenerator from "./component/ComponentGenerator.js";
 
 async function main() {
   // Create and populate the generator registry

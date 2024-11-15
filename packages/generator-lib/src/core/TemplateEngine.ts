@@ -1,6 +1,6 @@
 import ejs from "ejs";
 import fs from "fs-extra";
-import Context from "./Context.js";
+import type Context from "./Context.js";
 
 export default class TemplateEngine {
   async render(templatePath: string, context: Context): Promise<string> {

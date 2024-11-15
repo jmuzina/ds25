@@ -1,7 +1,8 @@
-import { Prompts, type QuestionChain } from "./Prompts.js";
-import Context from "./Context.js";
-import TemplateEngine from "./TemplateEngine.js";
+import type Context from "./Context.js";
 import FileOperations from "./FileOperations.js";
+import Prompts from "./Prompts.js";
+import type { QuestionChain } from "./Question.js";
+import TemplateEngine from "./TemplateEngine.js";
 
 export default class Generator {
   protected context: Context = {};
