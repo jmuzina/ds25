@@ -1,13 +1,13 @@
-import type { Context } from "../types/Context.js";
-import { FileOperations } from "./FileOperations.js";
 import { Prompts, type QuestionChain } from "./Prompts.js";
-import { TemplateEngine } from "./TemplateEngine.js";
+import Context from "./Context.js";
+import TemplateEngine from "./TemplateEngine.js";
+import FileOperations from "./FileOperations.js";
 
-export class Generator {
-  private context: Context = {};
-  private templateEngine: TemplateEngine;
-  private fileOperations: FileOperations;
-  private prompts: Prompts;
+export default class Generator {
+  protected context: Context = {};
+  protected templateEngine: TemplateEngine;
+  protected fileOperations: FileOperations;
+  protected prompts: Prompts;
 
   constructor() {
     this.templateEngine = new TemplateEngine();
@@ -38,7 +38,7 @@ export class Generator {
     await subgenerator.run();
   }
 
-  async run() {
-    console.log("Running generator...");
+  async run(): Promise<void> {
+    console.log("Running base generator...");
   }
 }

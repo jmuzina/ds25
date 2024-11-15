@@ -1,6 +1,6 @@
 import fs from "fs-extra";
 
-export class FileOperations {
+export default class FileOperations {
   async write(filePath: string, content: string) {
     await fs.outputFile(filePath, content);
   }

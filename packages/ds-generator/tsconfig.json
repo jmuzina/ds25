@@ -1,5 +1,5 @@
 {
-  "extends": "@canonical/typescript-config-base",
+  "extends": "@canonical/typescript-config-react",
   "compilerOptions": {
     "baseUrl": "src",
     "outDir": "dist/esm",
@@ -7,5 +7,5 @@
     "declarationDir": "dist/types",
     "skipLibCheck": true
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
 }

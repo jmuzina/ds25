@@ -1,3 +1,1 @@
-import { Generator } from "./core/Generator.js";
-
-export { Generator };
+export * from "./core/index.js";
