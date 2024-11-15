@@ -24,6 +24,7 @@
   "scripts": {
     "build": "lerna run build",
     "lerna": "lerna",
+    "prepare": "bun run build",
     "test": "bun run check",
     "check": "lerna run check",
     "check:fix": "lerna run check:fix"

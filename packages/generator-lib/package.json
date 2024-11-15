@@ -1,6 +1,6 @@
 {
-  "name": "@canonical/codegen-lib",
-  "version": "1.0.0",
+  "name": "@canonical/generator-lib",
+  "version": "0.0.1",
   "main": "dist/esm/index.js",
   "types": "dist/types/index.d.ts",
   "type": "module",

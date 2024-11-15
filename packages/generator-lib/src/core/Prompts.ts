@@ -54,19 +54,3 @@ export class Prompts {
 
   constructor(public questions: QuestionChain = {}) {}
 }
-
-// Example usage
-async function run() {
-  const questions: QuestionChain = {
-    firstName: new Question("What's your first name?", "input"),
-    lastName: new Question("What's your last name?", "input"),
-    allowEmail: new Question("Do you allow us to send you email?", "confirm"),
-  };
-
-  const prompts = new Prompts(questions);
-
-  const answers = await prompts.ask();
-  console.log("Your answers:", answers);
-}
-
-run();
