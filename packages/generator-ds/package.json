@@ -1,10 +1,13 @@
 {
-  "name": "@canonical/ds-codegen",
+  "name": "@canonical/generator-ds",
   "version": "1.0.0",
   "main": "dist/esm/index.js",
   "types": "dist/types/index.d.ts",
   "type": "module",
   "files": ["dist"],
+  "bin": {
+    "generator-ds": "bun src/index.ts"
+  },
   "scripts": {
     "build": "tsc",
     "start": "bun run src/index.ts",

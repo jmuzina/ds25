@@ -1,7 +1,7 @@
 import { CLIManager, GeneratorRegistry } from "@canonical/generator-lib";
 import ComponentGenerator from "./component/ComponentGenerator.js";
 
-async function main() {
+export default async function main() {
   // Create and populate the generator registry
   const registry = new GeneratorRegistry();
   registry.register("component", ComponentGenerator);
@@ -13,8 +13,4 @@ async function main() {
   await cliManager.run();
 }
 
-// Invoke the main function to bootstrap the CLI
-main().catch((err) => {
-  console.error("Error executing CLI:", err);
-  process.exit(1);
-});
+export * from "./component/ComponentGenerator.js";
